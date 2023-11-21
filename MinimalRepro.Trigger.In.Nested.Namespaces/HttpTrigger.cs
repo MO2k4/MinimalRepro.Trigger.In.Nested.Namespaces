@@ -8,7 +8,7 @@ namespace MinimalRepro.Trigger.In.Nested.Namespaces;
 public static class HttpTrigger
 {
     [Function("HttpTrigger")]
-    public static HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post")] HttpRequestData req,
+    public static HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = "foobar")] HttpRequestData req,
         FunctionContext executionContext)
     {
         var logger = executionContext.GetLogger("HttpTrigger");
